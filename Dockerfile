@@ -32,6 +32,7 @@ RUN apk add --no-cache gnupg pwgen binutils numactl numactl-tools nodejs yarn &&
     rm -f /usr/bin/foxx && \
     rm -f ${ARANGO_PACKAGE}* data.tar.gz && \
     apk del gnupg
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 # Note that Openshift runs containers by default with a random UID and GID 0.
 # We need that the database and apps directory are writable for this config.
 
